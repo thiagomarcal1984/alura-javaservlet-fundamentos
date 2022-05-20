@@ -1,0 +1,11 @@
+Use a perspectiva Java EE no Eclipse.
+
+Criar uma configuração de servidor:
+Aba Server-> Define a new Server.
+
+Escolha o Tomcat (a versão que você tiver baixado). 
+Aponte para o caminho do Tomcat (sem incluir o caminho\bin).
+Escolha uma JRE diferente da opção default (por que?).
+
+Após finalizar, inicie o servidor. Na aba de Console você vai ver 
+o log do Tomcat  (e o caminho de rede acessível para ele).
