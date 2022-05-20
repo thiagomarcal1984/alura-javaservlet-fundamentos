@@ -9,3 +9,47 @@ Escolha uma JRE diferente da opção default (por que?).
 
 Após finalizar, inicie o servidor. Na aba de Console você vai ver 
 o log do Tomcat  (e o caminho de rede acessível para ele).
+
+
+Para criar um projeto no Eclipse Java EE IDE, use:
+File -> New -> Dynamic Web Project. 
+
+Opções do primeiro passo do assistente:
+    Project name: gerenciador
+    Target runtime: Apache Tomcat 9.0 (o mesmo configurado anteriormente)
+
+Opções do segundo passo do assistente:
+    Source folder on build path: é o caminho onde estarão as classes que 
+        serão compiladas. No curso o caminho é apenas src.
+    Default output folder:  é o caminho dos bytecodes compilados do projeto.
+        Por padrão o caminho é build\classes.
+
+Opções do terceiro passo do assistente:
+    Context Root: como o projeto será chamado na URL. 
+        No curso temos o valor "gerenciador".
+    Content Directory: pasta que vai conter o conteúdo Web.
+        No curso o valor é WebContent.
+    Generate web.xml deployment descriptor: gera o DD, (configurações em XML).
+        No curso marcamos essa opção.
+
+As opções do assistente podem ser modificadas na propriedade 
+Deployment Assembly do projeto, sendo:
+    Source          Deploy Path
+    /src            WEB-INF/classes     // Bytecodes
+    /WebContent     /                   // Conteúdo Web.
+
+
+Servlet é uma especificação Java. Para cada especificação Java, temos um XML
+diferente. O web.xml serve para a especificação Servlet; na especificação JPA,
+temos o persistence.xml; na especificação ejb, temos o ejb.xml etc.
+
+Esses XML não são obrigatórios, mas permitem uma personalização do projeto.
+
+
+Para incluir o projeto no servidor Tomcat, clique com o botão direto no 
+servidor Tomcat (aba Servers) e escolha "Add and remove". Acrescente os 
+projetos e clique em Finish.
+
+Dentro da raiz pasta WebContent, crie um arquivo HTML chamado bem-vindo.html.
+Depois tente acessar: http://localhost:8080/gerenciador/bem-vindo.html
+Padrão: http://localhost:8080/{projeto}/{arquivo}
