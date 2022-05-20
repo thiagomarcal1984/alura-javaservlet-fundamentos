@@ -53,3 +53,15 @@ projetos e clique em Finish.
 Dentro da raiz pasta WebContent, crie um arquivo HTML chamado bem-vindo.html.
 Depois tente acessar: http://localhost:8080/gerenciador/bem-vindo.html
 Padrão: http://localhost:8080/{projeto}/{arquivo}
+
+Ao sobrescrever o método service de HttpServlet, tire os throws:
+@Override
+protected void service(HttpServletRequest req, HttpServletResponse resp) {
+    
+}
+
+Anote a classe do servlet com a classe WebServlet(urlpatterns="caminho"):
+@WebServlet(urlPatterns = "/oi")
+public class OiMundoServlet extends HttpServlet{
+    ...
+}
