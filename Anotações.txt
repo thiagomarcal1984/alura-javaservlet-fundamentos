@@ -118,3 +118,12 @@ Os arquivos JSP por padrão contém um objeto out, que pode ser usado nos
 scriptlets para gerar conteúdo HTML dinâmico.
 
 Há um atalho para não usar o out.print: use o Scriptlet <%= variavel %>.
+
+
+O RequestDispatcher é um objeto que possibilita a comunicação entre um servlet
+e uma página JSP. Para obte-lo, usamos o método getRequestDispatcher do objeto 
+request do servlet.
+
+No servlet, passamos pela requisição os atributos com o método setAttribute. 
+O RequestDispatcher recebe a request (incluindo seus atributos) e a response.
+Na página JSP, pegamos os atributos da requisção com o método getAttribute.
