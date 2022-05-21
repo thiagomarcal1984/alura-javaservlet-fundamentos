@@ -101,3 +101,9 @@ Perceba que, como o servlet só aceita o método POST agora, requisições
 GET não são permitidas, a não ser que se escreva o método doGet.
 A seguinte URL não estará disponível via get: 
 http://localhost:8080/gerenciador/novaEmpresa?nome=Teste
+
+No projeto, o modelo fica todo em memória e ele consite em duas classes:
+    Empresa;
+    Banco.
+A classe banco armazena uma lista de empresas, que cresce na medida que se 
+acrescenta uma empresa usando o método POST.
