@@ -65,3 +65,23 @@ Anote a classe do servlet com a classe WebServlet(urlpatterns="caminho"):
 public class OiMundoServlet extends HttpServlet{
     ...
 }
+
+
+Ao criar um novo Servlet usando o assistente do Eclipse, é possível mudar o
+caminho da URL no segundo passo do assistente. No terceiro passo do assistente
+podemos selecionar os métodos que serão sobrescritos. No exemplo, vamos 
+sobrescrever o método service(HttpServletRequest, HttpServletResponse).
+
+#############################################################################
+Use o rebuild para recompilar os arquivos, antes de subi-los para o Tomcat.
+#############################################################################
+
+Para capturar parâmetros da requisição, use o método getParameter do objeto
+request. Dentro do método forneça a String com a chave do parâmetro:
+	protected void service( HttpServletRequest request, 
+                            HttpServletResponse response) throws IOException {
+        ...
+		String empresa = request.getParameter("nome");
+        ...
+    }
+
