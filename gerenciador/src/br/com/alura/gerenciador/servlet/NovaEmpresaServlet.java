@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/novaEmpresa")
 public class NovaEmpresaServlet extends HttpServlet {
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		System.out.println("Cadastrando nova empresa.");
 		PrintWriter out = response.getWriter();
 		String empresa = request.getParameter("nome");
-		empresa = empresa == null ? "NÃO INFORMADA" : empresa;
+		empresa = empresa == null ? "Nï¿½O INFORMADA" : empresa;
 		out.println("<html><body>Empresa " + empresa + " cadastrada com sucesso!</body></html>");
 	}
 }
