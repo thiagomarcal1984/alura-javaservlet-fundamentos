@@ -107,3 +107,14 @@ No projeto, o modelo fica todo em memória e ele consite em duas classes:
     Banco.
 A classe banco armazena uma lista de empresas, que cresce na medida que se 
 acrescenta uma empresa usando o método POST.
+
+
+Arquivos de extensão JSP são HTML com Scriptlets (códigos java embutido).
+Os scriptlets funcionam da mesma forma que as marcações do PHP:
+    <? echo "Código PHP"; ?>
+    <% System.out.println("Scriptlet Java"); %>
+
+Os arquivos JSP por padrão contém um objeto out, que pode ser usado nos
+scriptlets para gerar conteúdo HTML dinâmico.
+
+Há um atalho para não usar o out.print: use o Scriptlet <%= variavel %>.
