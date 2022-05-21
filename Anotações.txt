@@ -88,3 +88,16 @@ request. Dentro do método forneça a String com a chave do parâmetro:
 
 Repare no método POST no formulário HTML formNovaEmpresa. O método service
 do Servlet atende tanto às requisições GET quanto POST.
+
+Os servlets tem métodos com os nomes do<NomeDoMétodoHTTP>:
+    doPost (substituiu o método service no servlet NovaEmpresaServlet);
+    doGet;
+    doPut;
+    doHeader;
+    doDelete;
+    doTrace.
+
+Perceba que, como o servlet só aceita o método POST agora, requisições 
+GET não são permitidas, a não ser que se escreva o método doGet.
+A seguinte URL não estará disponível via get: 
+http://localhost:8080/gerenciador/novaEmpresa?nome=Teste
