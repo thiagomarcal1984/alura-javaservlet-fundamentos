@@ -127,3 +127,10 @@ request do servlet.
 No servlet, passamos pela requisição os atributos com o método setAttribute. 
 O RequestDispatcher recebe a request (incluindo seus atributos) e a response.
 Na página JSP, pegamos os atributos da requisção com o método getAttribute.
+
+
+A diretiva <%@ page import="caminho.da.Classe, caminho.da.outra.Classe "%>
+serve para importar classes para dentro do JSP.
+
+No Java, é importante tipar direito o que é obtido de request.getAttribute.
+Por isso os casts de tipos são tão importantes no JSP.
