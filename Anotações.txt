@@ -85,3 +85,6 @@ request. Dentro do método forneça a String com a chave do parâmetro:
         ...
     }
 
+
+Repare no método POST no formulário HTML formNovaEmpresa. O método service
+do Servlet atende tanto às requisições GET quanto POST.
