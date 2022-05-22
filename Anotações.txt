@@ -237,3 +237,18 @@ chamado no redirecionamento. Isso porque ao redirecionar, uma nova requisição
 é feita. Como o RequestDispatcher trata uma requisição por vez, os parâmetros
 atribuídos ao RequestDispatcher se perdem. Por isso a empresa fica nula e o
 JSP não localiza esse atributo.
+
+Curso de Chrome DevTools: https://cursos.alura.com.br/course/chrome-devtools
+Esse curso está descontinuado, mas pode ser bom.
+
+
+Iterators são objetos próprios para trabalhar com listas (java.util.List). 
+Toda lista tem o método iterator(), que retorna um iterador. O iterador tem 3
+métodos interessantes:
+    hasNext => booleano que testa se há mais elementos no iterador;
+    next    => captura o próximo elemento do iterador;
+    remove  => remove o objeto atual do iterador.
+
+Se você for usar um loop for para excluir um elemento de uma lista, essa lista
+será alterada e o loop vai ter problemas de modificação concorrente. Iterators
+são uma alternativa melhor para evitar esses problemas.
