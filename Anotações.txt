@@ -164,3 +164,25 @@ Exemplo de foreache com as tags JSTL:
 Sendo que empresas (plural) é uma variável que veio da RequestDispatcher, 
 e a variável empresa (singular) foi declarada dentro do for. Para referenciar
 o objeto empresa, é preciso usar a Expression Language.
+
+O Context Root (nome do projeto na URL do navegador) é modificado através da 
+propriedade de projeto Web Project Settings. O Context Root pode ser diferente
+do nome da pasta que contém o projeto. Esse Context Root é uma propriedade
+no Eclipse/Tomcat, não nos arquivos do projeto JSP (src ou WebContent).
+
+A tag <c:url value="/servlet"/> retorna o path da URL (tudo que vem depois do
+nome do servidor). Exemplo: com o caminho http://localhost:8080/proj/servlet,
+o path retornado seria /proj/servlet. Outro exemplo: queremos acessar o servlet
+novaEmpresa no Context Root root. Para obter o path /root/servlet, usamos 
+<c:url value="/servlet"/>.
+
+No curso, foram usados duas tags <c:if text=""> em novaEmpresaCriada.jsp. Mas 
+há outra sintaxe semelhante:
+    <c:choose>
+        <c:when text="${ not empty empresa }">
+            Empresa ${ empresa } cadastrada com sucesso!
+        </c:when>
+        <c:otherwise>
+            Nenhuma empresa cadastrada.
+        </c:otherwise>
+    </c:choose>
