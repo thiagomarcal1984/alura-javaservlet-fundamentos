@@ -263,3 +263,25 @@ O curso propõe 2 classes: MostraEmpresaServlet e AlteraEmpresaServlet. Mas o
 servlet AlteraEmpresaServlet implementa doPost, e o MostraEmpresaServlet
 implementa doGet. Talvez as duas classes pudessem se juntar em uma só, com
 os dois métodos implementados.
+
+
+O arquivo web.xml NÃO é mais obrigatório, mas versões legadas de código Java
+pode usar esse arquivo. Uma das funções desse arquivo é definir os arquivos
+de boas vindas do projeto (os indexes).
+
+Outra função (obsoleta) do web.xml é registrar os mapeamentos dos servlets às
+URLs. Veja no web.xml a inserção do path /ola que redireciona para o servlet
+OiMundoServlet. O padrão para o mapeamento de servlets no web.xml é:
+
+    <servlet>
+        <servlet-name>nome-do-servlet</servlet-name>
+        <servlet-class>caminho.do.pacote.ClasseDoServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>nome-do-servlet</servlet-name>
+        <url-pattern>/path-personalizado</url-pattern>
+        <url-pattern>/path-personalizado-adicional</url-pattern>
+    </servlet-mapping>
+
+O web.xml também define o timeout de sessões na aplicação Java EE.
