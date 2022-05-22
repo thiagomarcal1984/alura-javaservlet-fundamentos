@@ -186,3 +186,20 @@ há outra sintaxe semelhante:
             Nenhuma empresa cadastrada.
         </c:otherwise>
     </c:choose>
+
+Curso de JSTL na Alura (descontinuado): https://cursos.alura.com.br/course/jstl
+
+Ao importar as JSTL, nunca use as seguintes URIs:
+    http://java.sun.com/jstl/core
+    http://java.sun.com/jstl/fmt
+
+Ao invés disso, use:
+    http://java.sun.com/jsp/jstl/core
+    http://java.sun.com/jsp/jstl/fmt
+
+Repare na diferença das URIs: tem o /jsp/ por dentro. As primeiras URIs estão
+depreciadas. Isso pode trazer problemas ao usar as taglibs.
+
+A classe SimpleDateFormat foi usada no curso para gerar datas a partir de uma
+String. O parse retorna um objeto da classe Date. As boas práticas mandam usar
+objetos do tipo Calendar, mas para o curso já está bom o bastante.
