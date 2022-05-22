@@ -36,8 +36,8 @@ public class NovaEmpresaServlet extends HttpServlet {
 		Banco banco = new Banco();
 		banco.adiciona(empresa);
 		
-		// Chamar a página JSP:
-		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
+		// Chamar a página JSP ou o Servlet:
+		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
 		
 		request.setAttribute("empresa", empresa.getNome());
 		rd.forward(request, response);

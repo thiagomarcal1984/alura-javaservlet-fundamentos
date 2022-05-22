@@ -203,3 +203,23 @@ depreciadas. Isso pode trazer problemas ao usar as taglibs.
 A classe SimpleDateFormat foi usada no curso para gerar datas a partir de uma
 String. O parse retorna um objeto da classe Date. As boas práticas mandam usar
 objetos do tipo Calendar, mas para o curso já está bom o bastante.
+
+
+Há um exemplo de redirecionamento no curso: após cadastrar a empresa, o servlet
+redirecionaria para a listagem de Empresas. Mas a lista de empresas não é 
+carregada no servlet de criação de nova empresa, e não vale a pena copiar a
+lógica do servlet de listagem para o servlet de criação de Empresa.
+
+Para resolver essa questão, basta fornecer para o RequestDispatcher o caminho
+do servlet que vai continuar atendendo a requisição.
+
+É importante que o método HTTP do servlet posterior seja o mesmo que o usado
+no servlet original. Por exemplo, para criar uma empresa, usamos o POST; para
+confirmar a inserção e exibir a lista de empresas, o método precisa ser POST
+também. Para isso, podemos mudar o método de doGet no servlet da listagem para
+o método service. Outra forma é criar o método doPost e dentro dele chamar o
+método doGet com os parâmetros request e response repassados.
+
+Mas temos um problema: o navegador ainda vai estar no path para o servlet de
+criação de empresas. Se o usuário atualizar a página, a requisição POST é 
+repetida e a lógica de inserção de empresas também.
