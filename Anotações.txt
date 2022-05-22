@@ -223,3 +223,17 @@ método doGet com os parâmetros request e response repassados.
 Mas temos um problema: o navegador ainda vai estar no path para o servlet de
 criação de empresas. Se o usuário atualizar a página, a requisição POST é 
 repetida e a lógica de inserção de empresas também.
+
+
+O RequestDispatcher na verdade é um redirecionador server-side. Para evitar O
+problema de repetição da lógica de inserção, basta forçar um redirecionamento
+client-side. Para fazer esse redirecionamento, use o response.sendRedirect().
+
+Não use response.sendRedirect("/recurso"), com a barra dentro. Use assim:
+response.sendRedirect("recurso"). Senão, o path do recurso não será encontrado.
+
+Temos mais um problema: a mensagem de confirmação não aparece no recurso 
+chamado no redirecionamento. Isso porque ao redirecionar, uma nova requisição
+é feita. Como o RequestDispatcher trata uma requisição por vez, os parâmetros
+atribuídos ao RequestDispatcher se perdem. Por isso a empresa fica nula e o
+JSP não localiza esse atributo.

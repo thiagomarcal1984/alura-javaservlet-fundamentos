@@ -36,10 +36,14 @@ public class NovaEmpresaServlet extends HttpServlet {
 		Banco banco = new Banco();
 		banco.adiciona(empresa);
 		
-		// Chamar a página JSP ou o Servlet:
-		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
-		
-		request.setAttribute("empresa", empresa.getNome());
-		rd.forward(request, response);
+		// O RequestDispatcher pode chamar qualquer recurso (servlet, HTML, JSP etc.):
+// Ctrl+Shift+C no Eclipse transforma a seleção em comentários.
+//		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
+//		
+		request.setAttribute("empresa", empresa.getNome()); // Esta linha não influencia no redirecionamento client-side.
+//		rd.forward(request, response);
+
+		// Perceba que o request.setAttribute não influencia a requisição client-side.
+		response.sendRedirect("listaEmpresas");
 	}
 }
