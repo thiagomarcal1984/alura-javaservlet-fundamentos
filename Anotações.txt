@@ -285,3 +285,21 @@ OiMundoServlet. O padrão para o mapeamento de servlets no web.xml é:
     </servlet-mapping>
 
 O web.xml também define o timeout de sessões na aplicação Java EE.
+
+
+O Tomcat é um middleware. Middleware é um software que fica entre outros dois.
+Ele é um intermediário entre o navegador e a aplicação/banco de dados.
+
+A instanciação dos objetos pelo Tomcat é preguiçosa: a aplicação pode ter 
+vários servlets, mas o Tomcat não instancia tudo de uma vez: instancia sob
+demanda. Uma forma de confirmar isso é redefinindo o construtor padrão de um
+servlet e colocar um comando de print (que vai ser exibido no log do Tomcat).
+O Tomcat instancia vários singletons! Um objeto único de cada servlet! E esses
+singletons vivem enquanto o servidor estiver de pé.
+
+Um servidor de aplicação Java implementa toda a especificação do Java EE. Já
+um servlet container não implementa toda a especificação Java EE, apenas as 
+necessárias para rodar uma aplicação web (servlets, JSP, JSF, JSTL etc.).
+
+IoC = Inversion of Control. O servlet container é quem instancia os objetos. 
+Não é o código da aplicação que instancia os objetos.
