@@ -134,3 +134,7 @@ serve para importar classes para dentro do JSP.
 
 No Java, é importante tipar direito o que é obtido de request.getAttribute.
 Por isso os casts de tipos são tão importantes no JSP.
+
+
+Comando para imprimir diretamente uma variável no JSP: ${variável}. Esta é a 
+notação Expression Language (EL) do JEE.
