@@ -303,3 +303,13 @@ necessárias para rodar uma aplicação web (servlets, JSP, JSF, JSTL etc.).
 
 IoC = Inversion of Control. O servlet container é quem instancia os objetos. 
 Não é o código da aplicação que instancia os objetos.
+
+
+O Tomcat só instancia a servlet quando realmente ocorre uma requisição. Isso é
+o comportamento padrão que podemos alterar facilmente! A anotação @WebServlet 
+possui um atributo loadOnStartup que muda esse comportamento:
+
+    @WebServlet(urlPatterns="/path-do-servlet", loadOnStartup=1)
+    public class ExemploServlet extends HttpServlet {
+        ...
+    }
