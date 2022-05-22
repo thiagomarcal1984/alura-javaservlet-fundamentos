@@ -252,3 +252,8 @@ métodos interessantes:
 Se você for usar um loop for para excluir um elemento de uma lista, essa lista
 será alterada e o loop vai ter problemas de modificação concorrente. Iterators
 são uma alternativa melhor para evitar esses problemas.
+
+
+Há duas fontes de variáveis nas páginas JSP: a própria página JSP (com as
+variáveis declaradas dentro das tags com o atributo var="") e os servlets cujo
+RequestDispatcher redireciona a requisição para o JSP.
