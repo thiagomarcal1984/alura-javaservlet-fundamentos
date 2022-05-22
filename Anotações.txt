@@ -257,3 +257,9 @@ são uma alternativa melhor para evitar esses problemas.
 Há duas fontes de variáveis nas páginas JSP: a própria página JSP (com as
 variáveis declaradas dentro das tags com o atributo var="") e os servlets cujo
 RequestDispatcher redireciona a requisição para o JSP.
+
+
+O curso propõe 2 classes: MostraEmpresaServlet e AlteraEmpresaServlet. Mas o
+servlet AlteraEmpresaServlet implementa doPost, e o MostraEmpresaServlet
+implementa doGet. Talvez as duas classes pudessem se juntar em uma só, com
+os dois métodos implementados.
