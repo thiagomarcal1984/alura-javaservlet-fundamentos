@@ -313,3 +313,42 @@ possui um atributo loadOnStartup que muda esse comportamento:
     public class ExemploServlet extends HttpServlet {
         ...
     }
+
+
+Deploy no Tomcat: é necessário criar um arquivo Web ARchive (WAR) para deploy.
+Os arquivos WAR são o mesmo que arquivos compactados, mas com outra extensão.
+WAR files podem ser descompactados como qualquer outor arquivo ZIP.
+
+Dentro dos WAR, basicamente haveria a seguinte árvore de pastas:
+    - META-INF
+    - ... outros arquivos da pasta raiz, como HTML e JSP.
+    - WEB-INF
+        - classes (onde ficam os bytecodes compilados)
+        - lib (onde ficam as bibliotecas JAR usadas pela aplicação)
+        - o web.xml (Deployment Descriptor da aplicação)
+
+No Eclipse, clique com o botão direito sobre o projeto e selecione:
+    Export -> WAR File.
+
+###############################################################################
+Para implantar o WAR, basta enviar o arquivo na pasta webapps do Tomcat!
+###############################################################################
+
+Para iniciar o Tomcat, vá para a pasta bin dentro da pasta do Tomcat e procure
+o executável startup.(bat|sh). Antes de executar o startup.bat, defina as 
+variáveis de ambiente JRE_HOME e JAVA_HOME.
+
+Cuidado com a variável de ambiente CATALINA_HOME: deve ser o mesmo caminho do
+Tomcat, mas sem a pasta bin.
+
+###############################################################################
+Para achar um executável no path (como o javac) no Windows, use o comando:
+    d:\> where javac
+    C:\Program Files (x86)\Common Files\Oracle\Java\javapath\javac.exe
+    C:\Program Files\Common Files\Oracle\Java\javapath\javac.exe
+    C:\Program Files\Java\jdk-17.0.3.1\bin\javac.exe
+###############################################################################
+
+Para modificar a porta padrão do Tomcat, acesse CATALINA_HOME\conf\server.xml.
+Dentro desse arquivo tem a tag <Connector>. Modifique a propriedade port para
+o número da porta que você deseja.
